@@ -13,17 +13,13 @@ mi.addEventListener('click', buttonMi);
 
 /*Sandrine */
 /* cration des variables, des constantes et tableaux des idéogrammes*/
-const bouton = document.getElementById("random");
-const texte = document.getElementById("resultat");
 const iaIdeogrammes = ['Shi','Fu','Mi'];
 const nbIdeogrammes = iaIdeogrammes.length;
 
-/* déclanchement de la fonction randomize sur le clic du bouton*/
-bouton.addEventListener('click',randomize);
 
 /* fonction choisissant un idéogramme au hasard dans le tableau */
 function randomShifumi(){
-    texte.innerHTML = iaIdeogrammes[Math.floor(Math.random()*nbIdeogrammes)];
+   return iaIdeogrammes[Math.floor(Math.random()*nbIdeogrammes)];
 
 }
 
