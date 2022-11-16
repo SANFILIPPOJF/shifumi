@@ -63,10 +63,3 @@ function buttonMi(){
         return "gagné";
     }
 }
-
-function testing(){
-    console.log(buttonFu);
-    console.log(buttonMi);
-    console.log(buttonShi);
-}
-testing();
