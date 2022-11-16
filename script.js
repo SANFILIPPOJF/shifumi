@@ -23,24 +23,12 @@ const nbIdeogrammes = iaIdeogrammes.length;
 /* fonction choisissant un idéogramme au hasard dans le tableau */
 function randomShifumi(){
     return iaIdeogrammes[Math.floor(Math.random()*nbIdeogrammes)];
-   
-
-}
-
-function imageIa (){
-    if(randomShifumi==shi){
-        return ia.setAttribute("src","/img/shi.png")
-    }else if(randomShifumi==fu){
-        return ia.setAttribute("src","/img/fu.png")
-    }else(randomShifumi==mi){
-        return ia.setAttribute("src","/img/mi.png")
-    }
 }
 
 function buttonShi(){
-    let choixIA = randomShifumi();
-    player.setAttribute("src","/img/shi.png")
-    console.log(`choix du joueur Shi, choix du IA ${choixIA}`);
+    choixIA = randomShifumi();
+    player.src = "/img/shi.png";
+    ia.src = `/img/${choixIA}.png`;
     if (choixIA == "mi"){
         return "Gagné"
     }else if (choixIA == "fu"){
@@ -53,8 +41,8 @@ function buttonShi(){
 
 function buttonFu(){
     choixIA = randomShifumi();
-    player.setAttribute("src","/img/fu.png")
-    console.log(`choix du joueur Fu, choix du IA ${choixIA}`);
+    player.src = "/img/fu.png";
+    ia.src = `/img/${choixIA}.png`;
     if(choixIA=="fu"){
         return "perdu"
     }else if(choixIA=="mi"){
@@ -67,17 +55,11 @@ function buttonFu(){
 
 function buttonMi(){
     choixIA = randomShifumi();
-<<<<<<< HEAD
-    player.setAttribute("src","/img/mi.png")
-    console.log(`choix du joueur Mi, choix du IA ${choixIA}`);
-    if (choixIA == "Mi"){
-=======
     player.src = "/img/mi.png";
     ia.src = `/img/${choixIA}.png`;
     if (choixIA == "mi"){
->>>>>>> 734b04cdb921123268edc99ceded3fcb871bc5c8
         return"egalité";
-    }else if (choixIA == "Fu"){
+    }else if (choixIA == "fu"){
         return "perdu";
     }else {
         return "gagné";
