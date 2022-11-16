@@ -28,16 +28,13 @@ function buttonShi(){
     let choixIA = randomShifumi
 
     if (choixIA == "mi"){
-        return "Gagné"}
-        
-        else if (choixIA == "fu"){
-            return "Perdu"
-        }
-        else {
-            return "Egalité" 
+        return "Gagné"
+    }else if (choixIA == "fu"){
+        return "Perdu"
+    }else {
+        return "Egalité" 
             //fonction qui reviens au début de la manche
     }
-
 }
 
 function buttonFu(){
@@ -46,8 +43,7 @@ function buttonFu(){
         return "perdu"
     }else if(choixIA=="Mi"){
         return "gagné"
-    }
-    if(choixIA=="Fu"){
+    } else {
         return "égalité"
     }
 
@@ -57,11 +53,11 @@ function buttonMi(){
     choixIA = randomShifumi;
     console.log(`choix du joueur Mi, choix du IA ${choixIA}`);
     if (choixIA == "Mi"){
-        return("egalité");
+        return"egalité";
     }else if (choixIA == "Fu"){
-        return("perdu");
+        return "perdu";
     }else {
-        return("gagné");
+        return "gagné";
     }
 }
 
