@@ -21,6 +21,15 @@ function buttonShi(){
 }
 
 function buttonFu(){
+    choixIA = randomShifumi;
+    if(choixIA=="fu"){
+        return("perdu")
+    }else if(choixIA=="Mi"){
+        return("gagné")
+    }
+    if(choixIA=="Fu"){
+        return("égalité")
+    }
 
 }
 
