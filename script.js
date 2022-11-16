@@ -34,14 +34,13 @@ function buttonFu(){
 }
 
 function buttonMi(){
-    choixIA = randomShifumi;
-    console.log(`choix du joueur Mi, choix du IA ${choixIA}`);
-    if (choixIA == "Mi"){
-        return("egalité");
-    }else if (choixIA == "Fu"){
-        return("perdu");
-    }else {
-        return("gagné");
-    }
+   choixIA = randomShifumi;
+   console.log(`choix du joueur Mi, choix du IA ${choixIA}`);
+   if (choixIA == "Mi"){
+      return("egalité");
+   }else if (choixIA == "Fu"){
+      return("perdu");
+   }else {
+      return("gagné");
+   }
 }
-console.log(butonMi);
