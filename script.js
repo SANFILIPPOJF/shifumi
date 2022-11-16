@@ -45,11 +45,11 @@ function buttonFu(){
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Fu Vs IA: ${choixIA}`);
     if(choixIA=="fu"){
-        return "perdu";
+        console.log("Egalité");        
     }else if(choixIA=="mi"){
-        return "gagné";
+        console.log("Gagné");
     } else {
-        return "égalité";
+        console.log("Perdu");
     }
 
 }
@@ -60,11 +60,11 @@ function buttonMi(){
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Mi Vs IA: ${choixIA}`);
     if (choixIA == "shi"){
-        
+        console.log("Gagné");
     }else if (choixIA == "fu"){
-        return "perdu";
+        console.log("Perdu");
     }else {
-        return "gagné";
+        console.log("Egalité");
     }
 }
 
