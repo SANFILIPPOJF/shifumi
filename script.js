@@ -1,14 +1,16 @@
-/*const shi = document.getElementById('shi');
+const shi = document.getElementById('shi');
 const fu = document.getElementById('fu');
 const mi = document.getElementById('mi');
 const player = document.getElementById('player');
 const ia = document.getElementById('ia');
-const command = document.getElementById('command'); */
+const command = document.getElementById('command');
 let choixIA;
+let ScoreIA=0;
+let ScorePlayer=0;
 
-/*shi.addEventListener('click', buttonShi);
+shi.addEventListener('click', buttonShi);
 fu.addEventListener('click', buttonFu);
-mi.addEventListener('click', buttonMi);*/
+mi.addEventListener('click', buttonMi);
 
 // Pour le reste, a vous de jouer
 
@@ -25,8 +27,8 @@ function randomShifumi(){
 }
 
 function buttonShi(){
-    let choixIA = randomShifumi
-
+    let choixIA = randomShifumi();
+    console.log(`choix du joueur Shi, choix du IA ${choixIA}`);
     if (choixIA == "mi"){
         return "Gagné"
     }else if (choixIA == "fu"){
@@ -38,7 +40,8 @@ function buttonShi(){
 }
 
 function buttonFu(){
-    choixIA = randomShifumi;
+    choixIA = randomShifumi();
+    console.log(`choix du joueur Fu, choix du IA ${choixIA}`);
     if(choixIA=="fu"){
         return "perdu"
     }else if(choixIA=="Mi"){
@@ -50,7 +53,7 @@ function buttonFu(){
 }
 
 function buttonMi(){
-    choixIA = randomShifumi;
+    choixIA = randomShifumi();
     console.log(`choix du joueur Mi, choix du IA ${choixIA}`);
     if (choixIA == "Mi"){
         return"egalité";
@@ -66,4 +69,4 @@ function testing(){
     console.log(buttonMi);
     console.log(buttonShi);
 }
-console.log(testing);
+testing();
