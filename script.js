@@ -6,8 +6,7 @@ const ia = document.getElementById('ia');
 const command = document.getElementById('command');
 
 let choixIA;
-let ScoreIA=0;
-let ScorePlayer=0;
+let Score=[0,0];
 
 shi.addEventListener('click', buttonShi);
 fu.addEventListener('click', buttonFu);
@@ -32,11 +31,11 @@ function buttonShi(){
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Shi Vs IA: ${choixIA}`);
     if (choixIA == "mi"){
-        return "Gagné";
+        console.log("Gagné");
     }else if (choixIA == "fu"){
-        return "Perdu";
+        console.log("Perdu");
     }else {
-        return "Egalité";
+        console.log("Egalité");
     }
 }
 
