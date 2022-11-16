@@ -5,8 +5,8 @@ const player = document.getElementById('player');
 const ia = document.getElementById('ia');
 const command = document.getElementById('command');
 let choixIA;
-let ScoreIA=0;
-let ScorePlayer=0;
+let ScoreIA;
+let ScorePlayer;
 
 shi.addEventListener('click', buttonShi);
 fu.addEventListener('click', buttonFu);
@@ -32,7 +32,7 @@ function imageIa (){
         return ia.setAttribute("src","/img/shi.png")
     }else if(randomShifumi==fu){
         return ia.setAttribute("src","/img/fu.png")
-    }else(randomShifumi==mi);{
+    }else(randomShifumi==mi){
         return ia.setAttribute("src","/img/mi.png")
     }
 }
@@ -67,11 +67,17 @@ function buttonFu(){
 
 function buttonMi(){
     choixIA = randomShifumi();
+<<<<<<< HEAD
     player.setAttribute("src","/img/mi.png")
     console.log(`choix du joueur Mi, choix du IA ${choixIA}`);
     if (choixIA == "Mi"){
+=======
+    player.src = "/img/mi.png";
+    ia.src = `/img/${choixIA}.png`;
+    if (choixIA == "mi"){
+>>>>>>> 734b04cdb921123268edc99ceded3fcb871bc5c8
         return"egalité";
-    }else if (choixIA == "fu"){
+    }else if (choixIA == "Fu"){
         return "perdu";
     }else {
         return "gagné";
