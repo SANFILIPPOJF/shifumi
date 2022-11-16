@@ -53,11 +53,13 @@ function buttonFu(){
 }
 
 function buttonMi(){
-    choixIA = randomShifumi();
-    console.log(`choix du joueur Mi, choix du IA ${choixIA}`);
-    if (choixIA == "Mi"){
+   choixIA = randomShifumi();
+   player.src = "/img/mi.png";
+   ia.src = `/img/${choixIA}.png`;
+   console.log(player,randomShifumi);
+    if (choixIA == "shi"){
         return"egalité";
-    }else if (choixIA == "Fu"){
+    }else if (choixIA == "fu"){
         return "perdu";
     }else {
         return "gagné";
