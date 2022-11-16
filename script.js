@@ -13,6 +13,7 @@ mi.addEventListener('click', buttonMi);
 
 function buttonShi(){
 
+
 }
 
 function buttonFu(){
