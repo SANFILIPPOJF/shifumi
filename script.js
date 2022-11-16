@@ -16,7 +16,7 @@ mi.addEventListener('click', buttonMi);
 
 /*Sandrine */
 /* cration des variables, des constantes et tableaux des idéogrammes*/
-const iaIdeogrammes = ['Shi','Fu','Mi'];
+const iaIdeogrammes = ['shi','fu','mi'];
 const nbIdeogrammes = iaIdeogrammes.length;
 
 
@@ -44,7 +44,7 @@ function buttonFu(){
     console.log(`choix du joueur Fu, choix du IA ${choixIA}`);
     if(choixIA=="fu"){
         return "perdu"
-    }else if(choixIA=="Mi"){
+    }else if(choixIA=="mi"){
         return "gagné"
     } else {
         return "égalité"
@@ -54,8 +54,9 @@ function buttonFu(){
 
 function buttonMi(){
     choixIA = randomShifumi();
-    console.log(`choix du joueur Mi, choix du IA ${choixIA}`);
-    if (choixIA == "Mi"){
+    player.src = "/img/mi.png";
+    ia.src = `/img/${choixIA}.png`;
+    if (choixIA == "mi"){
         return"egalité";
     }else if (choixIA == "Fu"){
         return "perdu";
