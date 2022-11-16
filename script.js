@@ -8,11 +8,10 @@ const command = document.getElementById('command');
 let choixIA;
 let ScoreIA=0;
 let ScorePlayer=0;
-let 
 
-shi.addEventListener('click', buttonShi());
-fu.addEventListener('click', buttonFu());
-mi.addEventListener('click', buttonMi());
+shi.addEventListener('click', buttonShi);
+fu.addEventListener('click', buttonFu);
+mi.addEventListener('click', buttonMi);
 
 // Pour le reste, a vous de jouer
 
