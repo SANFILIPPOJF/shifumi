@@ -20,10 +20,9 @@ const nbIdeogrammes = iaIdeogrammes.length;
 
 /* fonction choisissant un idéogramme au hasard dans le tableau */
 function randomShifumi(){
-   return iaIdeogrammes[Math.floor(Math.random()*nbIdeogrammes)];
+    return iaIdeogrammes[Math.floor(Math.random()*nbIdeogrammes)];
 
 }
-
 
 function buttonShi(){
 
@@ -44,4 +43,9 @@ function buttonMi(){
         return("gagné");
     }
 }
-console.log(butonMi);
+
+function test{
+    console.log(buttonFu);
+    console.log(buttonMi);
+    console.log(buttonShi);
+}
