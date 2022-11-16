@@ -1,14 +1,14 @@
-const shi = document.getElementById('shi');
+/*const shi = document.getElementById('shi');
 const fu = document.getElementById('fu');
 const mi = document.getElementById('mi');
 const player = document.getElementById('player');
 const ia = document.getElementById('ia');
-const command = document.getElementById('command');
+const command = document.getElementById('command'); */
 let choixIA;
 
-shi.addEventListener('click', buttonShi);
+/*shi.addEventListener('click', buttonShi);
 fu.addEventListener('click', buttonFu);
-mi.addEventListener('click', buttonMi);
+mi.addEventListener('click', buttonMi);*/
 
 // Pour le reste, a vous de jouer
 
@@ -43,12 +43,12 @@ function buttonShi(){
 function buttonFu(){
     choixIA = randomShifumi;
     if(choixIA=="fu"){
-        return("perdu")
+        return "perdu"
     }else if(choixIA=="Mi"){
-        return("gagné")
+        return "gagné"
     }
     if(choixIA=="Fu"){
-        return("égalité")
+        return "égalité"
     }
 
 }
@@ -65,8 +65,9 @@ function buttonMi(){
     }
 }
 
-function test{
+function testing(){
     console.log(buttonFu);
     console.log(buttonMi);
     console.log(buttonShi);
 }
+console.log(testing);
