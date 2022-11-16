@@ -11,6 +11,10 @@ mi.addEventListener('click', buttonMi);
 
 // Pour le reste, a vous de jouer
 
+function randomShifumi(){
+    
+}
+
 function buttonShi(){
 
 }
@@ -20,5 +24,5 @@ function buttonFu(){
 }
 
 function buttonMi(){
-    
+
 }
