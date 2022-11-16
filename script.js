@@ -6,7 +6,7 @@ const ia = document.getElementById('ia');
 const command = document.getElementById('command');
 let choixIA;
 let ScoreIA;
-let ScorePlayer;
+let ScorePlayer = 0;
 
 shi.addEventListener('click', buttonShi);
 fu.addEventListener('click', buttonFu);
