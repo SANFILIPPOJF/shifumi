@@ -4,7 +4,7 @@ const mi = document.getElementById('mi');
 const player = document.getElementById('player');
 const ia = document.getElementById('ia');
 const command = document.getElementById('command');
-let choixIA;
+
 
 shi.addEventListener('click', buttonShi);
 fu.addEventListener('click', buttonFu);
