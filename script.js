@@ -1,3 +1,4 @@
+/* Les differents liens utiles vers HTML */
 const shi = document.getElementById('shi');
 const fu = document.getElementById('fu');
 const mi = document.getElementById('mi');
@@ -6,25 +7,23 @@ const ia = document.getElementById('ia');
 const command = document.getElementById('command');
 
 let choixIA;
+/* Definition du tableau score index 0 = player ; index 1 = IA */
 let Score=[0,0];
-
+/* declencheurs des boutons du jeu */
 shi.addEventListener('click', buttonShi);
 fu.addEventListener('click', buttonFu);
 mi.addEventListener('click', buttonMi);
 
-// Pour le reste, a vous de jouer
-
-/*Sandrine */
-/* cration des variables, des constantes et tableaux des idéogrammes*/
+/* création des variables, des constantes et tableaux des idéogrammes*/
 const iaIdeogrammes = ['shi','fu','mi'];
 const nbIdeogrammes = iaIdeogrammes.length;
 
-
-/* fonction choisissant un idéogramme au hasard dans le tableau */
+/* fonction retournant un idéogramme au hasard dans le tableau */
 function randomShifumi(){
     return iaIdeogrammes[Math.floor(Math.random()*nbIdeogrammes)];
 }
 
+/* fonction commandée par le bouton Shi */
 function buttonShi(){
     choixIA = randomShifumi();
     player.src = "/img/shi.png";
@@ -38,7 +37,7 @@ function buttonShi(){
         console.log("Egalité");
     }
 }
-
+/* fonction commandée par le bouton Fu */
 function buttonFu(){
     choixIA = randomShifumi();
     player.src = "/img/fu.png";
@@ -53,7 +52,7 @@ function buttonFu(){
     }
 
 }
-
+/* fonction commandée par le bouton Mi */
 function buttonMi(){
     choixIA = randomShifumi();
     player.src = "/img/mi.png";
@@ -67,15 +66,19 @@ function buttonMi(){
         console.log("Egalité");
     }
 }
-
-function quiGagne (a,b){
-
-}
-
-function afficheChoix (a,b){
+/* fonction qui retourne si le joueur ayant fait le choixA gagne, perd, ou a une nouvelle chance  */
+function quiGagne (choixA,choixB){
 
 }
+/* fonction qui affiche le choix determiné pour un joueur determiné */
+function afficheChoix (choix,joueur){
 
-function evolutionScore (a){
+}
+/* fonction qui fait evoluer l'affichage du score */ 
+function evolutionScore (tabScore){
 
+}
+/* fonction restart qui initialise la partie */
+function restart(){
+    
 }
