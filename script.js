@@ -26,6 +26,18 @@ function randomShifumi(){
 
 
 function buttonShi(){
+    let choixIA = randomShifumi
+
+    if (choixIA == "mi"){
+        return "Gagné"}
+        
+        else if (choixIA == "fu"){
+            return "Perdu"
+        }
+        else {
+            return "Egalité" 
+            //fonction qui reviens au début de la manche
+    }
 
 }
 
