@@ -25,10 +25,31 @@ function randomShifumi(){
 }
 
 function buttonShi(){
+    let choixIA = randomShifumi
+
+    if (choixIA == "mi"){
+        return "Gagné"}
+        
+        else if (choixIA == "fu"){
+            return "Perdu"
+        }
+        else {
+            return "Egalité" 
+            //fonction qui reviens au début de la manche
+    }
 
 }
 
 function buttonFu(){
+    choixIA = randomShifumi;
+    if(choixIA=="fu"){
+        return("perdu")
+    }else if(choixIA=="Mi"){
+        return("gagné")
+    }
+    if(choixIA=="Fu"){
+        return("égalité")
+    }
 
 }
 
