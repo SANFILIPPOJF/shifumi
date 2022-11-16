@@ -4,13 +4,15 @@ const mi = document.getElementById('mi');
 const player = document.getElementById('player');
 const ia = document.getElementById('ia');
 const command = document.getElementById('command');
-let choixIA;
-let ScoreIA;
-let ScorePlayer;
 
-shi.addEventListener('click', buttonShi);
-fu.addEventListener('click', buttonFu);
-mi.addEventListener('click', buttonMi);
+let choixIA;
+let ScoreIA=0;
+let ScorePlayer=0;
+let 
+
+shi.addEventListener('click', buttonShi());
+fu.addEventListener('click', buttonFu());
+mi.addEventListener('click', buttonMi());
 
 // Pour le reste, a vous de jouer
 
@@ -29,13 +31,13 @@ function buttonShi(){
     choixIA = randomShifumi();
     player.src = "/img/shi.png";
     ia.src = `/img/${choixIA}.png`;
+    console.log(`Player: Shi Vs IA: ${choixIA}`);
     if (choixIA == "mi"){
-        return "Gagné"
+        return "Gagné";
     }else if (choixIA == "fu"){
-        return "Perdu"
+        return "Perdu";
     }else {
-        return "Egalité" 
-            //fonction qui reviens au début de la manche
+        return "Egalité";
     }
 }
 
@@ -43,12 +45,13 @@ function buttonFu(){
     choixIA = randomShifumi();
     player.src = "/img/fu.png";
     ia.src = `/img/${choixIA}.png`;
+    console.log(`Player: Fu Vs IA: ${choixIA}`);
     if(choixIA=="fu"){
-        return "perdu"
+        return "perdu";
     }else if(choixIA=="mi"){
-        return "gagné"
+        return "gagné";
     } else {
-        return "égalité"
+        return "égalité";
     }
 
 }
@@ -57,11 +60,24 @@ function buttonMi(){
     choixIA = randomShifumi();
     player.src = "/img/mi.png";
     ia.src = `/img/${choixIA}.png`;
-    if (choixIA == "mi"){
-        return"egalité";
+    console.log(`Player: Mi Vs IA: ${choixIA}`);
+    if (choixIA == "shi"){
+        
     }else if (choixIA == "fu"){
         return "perdu";
     }else {
         return "gagné";
     }
+}
+
+function quiGagne (a,b){
+
+}
+
+function afficheChoix (a,b){
+
+}
+
+function evolutionScore (a){
+
 }
