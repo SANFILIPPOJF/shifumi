@@ -6,6 +6,8 @@ const player = document.getElementById('player');
 const ia = document.getElementById('ia');
 const command = document.getElementById('command');
 const tryAgain = document.getElementById('restart');
+const score_player = document.getElementById('score-player');
+const score_ia = document.getElementById('score-ia');
 
 let choixIA;
 let indexGagnant;
@@ -32,37 +34,40 @@ function randomShifumi(){
 /* fonction commandée par le bouton Shi */
 function buttonShi(){
     choixIA = randomShifumi();
-    player.src = "/img/shi.png";
-    ia.src = `/img/${choixIA}.png`;
+    afficheChoix("shi",player);
+    afficheChoix(choixIA,ia);
     console.log(`Player: Shi Vs IA: ${choixIA}`);
     quiGagne('shi',choixIA);
+    afficheScore();
     testNbPts();
 }
 /* fonction commandée par le bouton Fu */
 function buttonFu(){
     choixIA = randomShifumi();
-    player.src = "/img/fu.png";
-    ia.src = `/img/${choixIA}.png`;
+    afficheChoix("fu",player);
+    afficheChoix(choixIA,ia);
     console.log(`Player: Fu Vs IA: ${choixIA}`);
     quiGagne('fu',choixIA);
+    afficheScore();
     testNbPts();
 }
 
 /* fonction commandée par le bouton Mi */
 function buttonMi(){
     choixIA = randomShifumi();
-    player.src = "/img/mi.png";
-    ia.src = `/img/${choixIA}.png`;
+    afficheChoix("mi",player);
+    afficheChoix(choixIA,ia);
     console.log(`Player: Mi Vs IA: ${choixIA}`);
     quiGagne('mi',choixIA);
+    afficheScore();
     testNbPts();
 }
 /* fonction qui retourne si le joueur ayant fait le choixA gagne, perd, ou a une nouvelle chance  */
 function quiGagne (choixA,choixB){
-    if ((choixA=="shi") && (choixB=="mi") || (choixA=="fu") && (choixB=="shi") || (choixA=="mi") && (choixB=="fu")){
+    if ((choixA=="mi") && (choixB=="shi") || (choixA=="fu") && (choixB=="mi") || (choixA=="shi") && (choixB=="fu")){
         console.log( 'player gagne');
         score.player++;
-    }else if ((choixA=="shi" && choixB=="fu") || (choixA=='fu') && (choixB=='mi') || (choixA=='mi') && (choixB=='shi')){
+    }else if ((choixA=="shi" && choixB=="mi") || (choixA=='fu') && (choixB=='shi') || (choixA=='mi') && (choixB=='fu')){
         console.log('IA gagne');
         score.ia++;
     }else{
@@ -77,23 +82,22 @@ function afficheChoix (choix,joueur){
 }
 
 /* fonction qui fait evoluer l'affichage du score */ 
-function AfficheScore (){
-    player.innerHTML=score.player;
-    ia.innerHTML=score.ia;
+function afficheScore (){
+    score_player.textContent=score.player;
+    score_ia.textContent=score.ia;
 }
 
 /* fonction testant la fin des 3 manches */
 function testNbPts (){
-    let nbPts = score.player+score.ia;
     if (score.player==2 || score.ia==2) {
         masquerCommand();
         afficherTryAgain();
-    console.log('fin de partie');
+        console.log('fin de partie');
     }
     else {
-        console.log('continuer la partie');
+        console.log('la partie continue');
         return;
-}
+    }
 }
 /* fonction qui masque les 3 bouttons */
 function masquerCommand(){
