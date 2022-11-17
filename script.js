@@ -13,7 +13,7 @@ let indexGagnant;
 let Score={
     player: 0,
     IA: 0
-};
+}
 /* declencheurs des boutons du jeu */
 shi.addEventListener('click', buttonShi);
 fu.addEventListener('click', buttonFu);
@@ -69,20 +69,33 @@ function quiGagne (choixA,choixB){
 }
 /* fonction qui affiche le choix determiné pour un joueur determiné */
 function afficheChoix (choix,joueur){
-
-
+joueur.src=`/img/${choix}.png`
 }
+
 /* fonction qui fait evoluer l'affichage du score */ 
+function AfficheScore (){
+        player.innerHTML=score.player;
+        ia.innerHTML=score.ia;
+}
+
+/* fonction testant la fin des 3 manches */
+
+/* fonction qui fait evoluer l'affichage du score */
 function AfficheScore (tabScore){
 
 }
 /* fonction testant la fin des 3 manches */
 function testNbPts (){
-
+    let nbPts = Score.player+Score.IA;
+    if (nbPts<3) {
+        console.log('continuer la partie');
+        return;
+    }
+    else {
+        masquerCommand();
+        afficherTryAgain();
+    console.log('fin de partie');
 }
-/* fonction restart qui initialise la partie */
-function restart(){
-    
 }
 /* fonction qui masque les 3 bouttons */
 function masquer(){
@@ -96,3 +109,4 @@ function afficher(){
 function afficherTryAgain(){
     tryAgain.className= 'btn-restart';
 }
+
