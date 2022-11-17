@@ -31,13 +31,7 @@ function buttonShi(){
     player.src = "/img/shi.png";
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Shi Vs IA: ${choixIA}`);
-    if (choixIA == "mi"){
-        console.log("Gagné");
-    }else if (choixIA == "fu"){
-        console.log("Perdu");
-    }else {
-        console.log("Egalité");
-    }
+    quiGagne('shi',choixIA)
 }
 /* fonction commandée par le bouton Fu */
 function buttonFu(){
@@ -45,40 +39,28 @@ function buttonFu(){
     player.src = "/img/fu.png";
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Fu Vs IA: ${choixIA}`);
-    if(choixIA=="fu"){
-        console.log("Egalité");        
-    }else if(choixIA=="mi"){
-        console.log("Gagné");
-    } else {
-        console.log("Perdu");
+    quiGagne('fu',choixIA);
     }
 
-}
 /* fonction commandée par le bouton Mi */
 function buttonMi(){
     choixIA = randomShifumi();
     player.src = "/img/mi.png";
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Mi Vs IA: ${choixIA}`);
-    if (choixIA == "shi"){
-        console.log("Gagné");
-    }else if (choixIA == "fu"){
-        console.log("Perdu");
-    }else {
-        console.log("Egalité");
-    }
+    quiGagne('mi',choixIA)
 }
 /* fonction qui retourne si le joueur ayant fait le choixA gagne, perd, ou a une nouvelle chance  */
 function quiGagne (choixA,choixB){
-    if ((choixA==shi) && (choixB==mi) || (choixA==fu) && (choixB==shi) || (choixA==mi) && (choixB==fu)){
+    if ((choixA=='shi' && choixB=='fu') || (choixA=='fu' && choixB=='mi') || (choixA=='mi' && choixB=='shi')){
         console.log( 'player gagne')
         return 0
-    }else if ((choixA==shi && choixB==fu) || (choixA==fu) && (choixB==mi) || (choixA==mi) && (choixB==shi)){
+    }else if ((choixA=='shi' && choixB=='mi') || (choixA=='fu' && choixB=='shi') || (choixA=='mi' && choixB=='fu')){
         console.log('IA gagne')
         return 1
     }else{
         console.log('aucun ne gagne')
-        return 'none'}
+        return 2}
 }
 /* fonction qui affiche le choix determiné pour un joueur determiné */
 function afficheChoix (choix,joueur){
