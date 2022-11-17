@@ -5,6 +5,7 @@ const mi = document.getElementById('mi');
 const player = document.getElementById('player');
 const ia = document.getElementById('ia');
 const command = document.getElementById('command');
+const tryAgain = document.getElementById('restart');
 
 let choixIA;
 /* Definition du tableau score index 0 = player ; index 1 = IA */
@@ -13,6 +14,7 @@ let Score=[0,0];
 shi.addEventListener('click', buttonShi);
 fu.addEventListener('click', buttonFu);
 mi.addEventListener('click', buttonMi);
+tryAgain.addEventListener('click', restart);
 
 /* création des variables, des constantes et tableaux des idéogrammes*/
 const iaIdeogrammes = ['shi','fu','mi'];
