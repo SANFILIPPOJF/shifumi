@@ -36,6 +36,7 @@ function buttonShi(){
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Shi Vs IA: ${choixIA}`);
     quiGagne('shi',choixIA);
+    testNbPts();
 }
 /* fonction commandée par le bouton Fu */
 function buttonFu(){
@@ -44,6 +45,7 @@ function buttonFu(){
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Fu Vs IA: ${choixIA}`);
     quiGagne('fu',choixIA);
+    testNbPts();
 }
 
 /* fonction commandée par le bouton Mi */
@@ -53,6 +55,7 @@ function buttonMi(){
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Mi Vs IA: ${choixIA}`);
     quiGagne('mi',choixIA);
+    testNbPts();
 }
 /* fonction qui retourne si le joueur ayant fait le choixA gagne, perd, ou a une nouvelle chance  */
 function quiGagne (choixA,choixB){
@@ -63,7 +66,7 @@ function quiGagne (choixA,choixB){
         console.log('IA gagne');
         score.ia++;
     }else{
-        console.log('aucun ne gagne');
+        console.log('égalité');
     }
     console.log(`Player: ${score.player} Vs IA: ${score.ia}`);
     return;
@@ -80,30 +83,24 @@ function AfficheScore (){
 }
 
 /* fonction testant la fin des 3 manches */
-
-/* fonction qui fait evoluer l'affichage du score */
-function AfficheScore (tabScore){
-
-}
-/* fonction testant la fin des 3 manches */
 function testNbPts (){
-    let nbPts = Score.player+Score.IA;
-    if (nbPts<3) {
-        console.log('continuer la partie');
-        return;
-    }
-    else {
+    let nbPts = score.player+score.ia;
+    if (score.player==2 || score.ia==2) {
         masquerCommand();
         afficherTryAgain();
     console.log('fin de partie');
+    }
+    else {
+        console.log('continuer la partie');
+        return;
 }
 }
 /* fonction qui masque les 3 bouttons */
-function masquer(){
+function masquerCommand(){
     command.hidden = true;
 }
 /* fonction qui affiche les 3 boutons */
-function afficher(){
+function afficherCommand(){
     command.hidden = false;
 }
 /* fonction qui affiche le bouton "try again" */
