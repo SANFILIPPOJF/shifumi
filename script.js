@@ -80,13 +80,34 @@ function AfficheScore (){
 }
 
 /* fonction testant la fin des 3 manches */
+
+/* fonction qui fait evoluer l'affichage du score */
+function AfficheScore (tabScore){
+
+}
+/* fonction testant la fin des 3 manches */
 function testNbPts (){
+    let nbPts = Score.player+Score.IA;
+    if (nbPts<3) {
+        console.log('continuer la partie');
+        return;
+    }
+    else {
+        masquerCommand();
+        afficherTryAgain();
+    console.log('fin de partie');
+}
+}
+/* fonction qui masque les 3 bouttons */
+function masquer(){
+    command.hidden = true;
+}
+/* fonction qui affiche les 3 boutons */
+function afficher(){
+    command.hidden = false;
+}
+/* fonction qui affiche le bouton "try again" */
+function afficherTryAgain(){
+    tryAgain.className= 'btn-restart';
 }
 
-function affichescore (tabScore){
-}
-/* fonction restart qui initialise la partie */
-function restart(){
-    console.log ('nouvelle partie');
-    console.log(`score: player ${score[0]} IA: ${score[1]}`);
-}
