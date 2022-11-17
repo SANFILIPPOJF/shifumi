@@ -10,9 +10,9 @@ const tryAgain = document.getElementById('restart');
 let choixIA;
 let indexGagnant;
 /* Definition du tableau score index 0 = player ; index 1 = IA */
-let Score={
+let score={
     player: 0,
-    IA: 0
+    ia: 0
 }
 /* declencheurs des boutons du jeu */
 shi.addEventListener('click', buttonShi);
@@ -31,12 +31,11 @@ function randomShifumi(){
 
 /* fonction commandée par le bouton Shi */
 function buttonShi(){
-    command.className = "hidden";
     choixIA = randomShifumi();
     player.src = "/img/shi.png";
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Shi Vs IA: ${choixIA}`);
-    quiGagne('shi',choixIA)
+    quiGagne('shi',choixIA);
 }
 /* fonction commandée par le bouton Fu */
 function buttonFu(){
@@ -53,30 +52,31 @@ function buttonMi(){
     player.src = "/img/mi.png";
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Mi Vs IA: ${choixIA}`);
-    quiGagne('mi',choixIA)
+    quiGagne('mi',choixIA);
 }
 /* fonction qui retourne si le joueur ayant fait le choixA gagne, perd, ou a une nouvelle chance  */
 function quiGagne (choixA,choixB){
-    if ((choixA==shi) && (choixB==mi) || (choixA==fu) && (choixB==shi) || (choixA==mi) && (choixB==fu)){
-        console.log( 'player gagne')
-        return 0
-    }else if ((choixA==shi && choixB==fu) || (choixA==fu) && (choixB==mi) || (choixA==mi) && (choixB==shi)){
-        console.log('IA gagne')
-        return 1
+    if ((choixA=="shi") && (choixB=="mi") || (choixA=="fu") && (choixB=="shi") || (choixA=="mi") && (choixB=="fu")){
+        console.log( 'player gagne');
+        score.player++;
+    }else if ((choixA=="shi" && choixB=="fu") || (choixA=='fu') && (choixB=='mi') || (choixA=='mi') && (choixB=='shi')){
+        console.log('IA gagne');
+        score.ia++;
     }else{
-        console.log('aucun ne gagne')
-        return
+        console.log('aucun ne gagne');
     }
+    console.log(`Player: ${score.player} Vs IA: ${score.ia}`);
+    return;
 }
 /* fonction qui affiche le choix determiné pour un joueur determiné */
 function afficheChoix (choix,joueur){
-joueur.src=`/img/${choix}.png`
+    joueur.src=`/img/${choix}.png`;
 }
 
 /* fonction qui fait evoluer l'affichage du score */ 
 function AfficheScore (){
-        player.innerHTML=score.player;
-        ia.innerHTML=score.ia;
+    player.innerHTML=score.player;
+    ia.innerHTML=score.ia;
 }
 
 /* fonction testant la fin des 3 manches */
