@@ -70,9 +70,18 @@ function quiGagne (choixA,choixB){
 }
 /* fonction qui affiche le choix determiné pour un joueur determiné */
 function afficheChoix (choix,joueur){
-
+joueur.src=`/img/${choix}.png`
 }
+
 /* fonction qui fait evoluer l'affichage du score */ 
+function AfficheScore (){
+        player.innerHTML=score.player;
+        ia.innerHTML=score.ia;
+}
+
+/* fonction testant la fin des 3 manches */
+
+/* fonction qui fait evoluer l'affichage du score */
 function AfficheScore (tabScore){
 
 }
@@ -87,7 +96,7 @@ function testNbPts (){
         masquerCommand();
         afficherTryAgain();
     console.log('fin de partie');
-    }
+}
 }
 
 
@@ -104,3 +113,4 @@ function masquerCommand(element){
 function afficherCommand(element){
     
 }
+
