@@ -87,8 +87,11 @@ function affichescore (tabScore){
 }
 }
 /* fonction restart qui initialise la partie */
-function restart()
-{
+function restart(){
+<<<<<<< HEAD
+    console.log ('nouvelle partie');
+    console.log(`score: player ${Score[0]} IA: ${Score[1]}`);
+=======
     
 }
 /* fonction qui masque un element */
@@ -98,4 +101,5 @@ function masquer(element){
 /* fonction qui affiche un element */
 function afficher(element){
     
+>>>>>>> 198fd47aa1c975d4bba190e216575859051a30c8
 }
