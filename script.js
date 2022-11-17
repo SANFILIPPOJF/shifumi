@@ -82,13 +82,20 @@ function quiGagne (choixA,choixB){
 }
 /* fonction qui affiche le choix determiné pour un joueur determiné */
 function afficheChoix (choix,joueur){
-
+joueur.src=`/img/${choix}.png`
 }
-/* fonction qui fait evoluer l'affichage du score */ 
-function evolutionScore (tabScore){
-
+/* fonction qui fait evoluer l'affichage du score */
+let score_player=0
+let score_ia=0
+function affichescore (tabScore){
+if ("player gagne"){
+    score_player=score_player+1;
+    document.getElementById('player').innerHTML
+}else if("IA gagne"){
+    score_ia=score_ia+1
+    document.getElementById('ia');
+}
 }
 /* fonction restart qui initialise la partie */
-function restart(){
+function restart(score_ia+score==3){
     
-}
