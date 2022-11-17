@@ -102,7 +102,13 @@ function testNbPts (){
 
 /* fonction restart qui initialise la partie */
 function restart(){
-
+    score.player=0;
+    score.ia=0;
+    afficherCommand();
+    masquerTryagain();
+    console.log('nouvelle une partie');
+    console.log(`Player; ${score.player} Vs IA: ${score.ia}`);
+    return;
     }
 
 /* fonction qui masque un element */
