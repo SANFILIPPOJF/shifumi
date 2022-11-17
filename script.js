@@ -31,7 +31,6 @@ function randomShifumi(){
 
 /* fonction commandée par le bouton Shi */
 function buttonShi(){
-    command.className = "hidden";
     choixIA = randomShifumi();
     player.src = "/img/shi.png";
     ia.src = `/img/${choixIA}.png`;
@@ -71,6 +70,7 @@ function quiGagne (choixA,choixB){
 /* fonction qui affiche le choix determiné pour un joueur determiné */
 function afficheChoix (choix,joueur){
 
+
 }
 /* fonction qui fait evoluer l'affichage du score */ 
 function AfficheScore (tabScore){
@@ -84,11 +84,15 @@ function testNbPts (){
 function restart(){
     
 }
-/* fonction qui masque un element */
-function masquer(element){
-
+/* fonction qui masque les 3 bouttons */
+function masquer(){
+    command.hidden = true;
 }
-/* fonction qui affiche un element */
-function afficher(element){
-    
+/* fonction qui affiche les 3 boutons */
+function afficher(){
+    command.hidden = false;
+}
+/* fonction qui affiche le bouton "try again" */
+function afficherTryAgain(){
+    tryAgain.className= 'btn-restart';
 }
