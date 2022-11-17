@@ -8,8 +8,12 @@ const command = document.getElementById('command');
 const tryAgain = document.getElementById('restart');
 
 let choixIA;
+let indexGagnant;
 /* Definition du tableau score index 0 = player ; index 1 = IA */
-let Score=[0,0];
+let Score={
+    player: 0,
+    IA: 0
+};
 /* declencheurs des boutons du jeu */
 shi.addEventListener('click', buttonShi);
 fu.addEventListener('click', buttonFu);
@@ -27,6 +31,7 @@ function randomShifumi(){
 
 /* fonction commandée par le bouton Shi */
 function buttonShi(){
+    command.className = "hidden";
     choixIA = randomShifumi();
     player.src = "/img/shi.png";
     ia.src = `/img/${choixIA}.png`;
@@ -45,14 +50,7 @@ function buttonFu(){
     player.src = "/img/fu.png";
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Fu Vs IA: ${choixIA}`);
-    if(choixIA=="fu"){
-        console.log("Egalité");        
-    }else if(choixIA=="mi"){
-        console.log("Gagné");
-    } else {
-        console.log("Perdu");
-    }
-
+    quiGagne("fu",choixIA);
 }
 /* fonction commandée par le bouton Mi */
 function buttonMi(){
@@ -70,25 +68,38 @@ function buttonMi(){
 }
 /* fonction qui retourne si le joueur ayant fait le choixA gagne, perd, ou a une nouvelle chance  */
 function quiGagne (choixA,choixB){
-    if ((choixA==shi) && (choixB==mi) || (choixA==fu) && (choixB==shi) || (choixA==mi) && (choixB==fu)){
-        console.log( 'player gagne')
-        return 0
-    }else if ((choixA==shi && choixB==fu) || (choixA==fu) && (choixB==mi) || (choixA==mi) && (choixB==shi)){
-        console.log('IA gagne')
-        return 1
+    if ((choixA=="shi" && choixB=="mi") || (choixA=="fu" && choixB=="shi") || (choixA=="mi" && choixB=="fu")){
+        console.log( 'Player gagne');
+        return;
+    }else if ((choixA=="shi" && choixB=="fu") || (choixA=="fu" && choixB=="mi") || (choixA=="mi" && choixB=="shi")){
+        console.log('IA gagne');
+        return;
     }else{
-        console.log('aucun ne gagne')
-        return 'none'}
+        console.log('Egalité');
+        return;
+    }
 }
 /* fonction qui affiche le choix determiné pour un joueur determiné */
 function afficheChoix (choix,joueur){
 
 }
 /* fonction qui fait evoluer l'affichage du score */ 
-function evolutionScore (tabScore){
+function AfficheScore (tabScore){
+
+}
+/* fonction testant la fin des 3 manches */
+function testNbPts (){
 
 }
 /* fonction restart qui initialise la partie */
 function restart(){
+    
+}
+/* fonction qui masque un element */
+function masquer(element){
+
+}
+/* fonction qui affiche un element */
+function afficher(element){
     
 }
