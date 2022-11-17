@@ -13,7 +13,7 @@ let indexGagnant;
 let Score={
     player: 0,
     IA: 0
-};
+}
 /* declencheurs des boutons du jeu */
 shi.addEventListener('click', buttonShi);
 fu.addEventListener('click', buttonFu);
@@ -78,22 +78,29 @@ function AfficheScore (tabScore){
 }
 /* fonction testant la fin des 3 manches */
 function testNbPts (){
-
+    let nbPts = Score.player+Score.IA;
+    if (nbPts<3) {
+        console.log('continuer la partie');
+        return;
+    }
+    else {
+        masquerCommand();
+        afficherTryAgain();
+    console.log('fin de partie');
+    }
 }
+
+
 /* fonction restart qui initialise la partie */
 function restart(){
-<<<<<<< HEAD
-    console.log ('nouvelle partie');
-    console.log(`score: player ${Score[0]} IA: ${Score[1]}`);
-=======
-    
-}
+
+    }
+
 /* fonction qui masque un element */
-function masquer(element){
+function masquerCommand(element){
 
 }
 /* fonction qui affiche un element */
-function afficher(element){
+function afficherCommand(element){
     
->>>>>>> 198fd47aa1c975d4bba190e216575859051a30c8
 }
