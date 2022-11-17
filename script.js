@@ -70,25 +70,23 @@ function quiGagne (choixA,choixB){
 }
 /* fonction qui affiche le choix determiné pour un joueur determiné */
 function afficheChoix (choix,joueur){
-
+    joueur.src=`/img/${choix}.png`;
 }
+
 /* fonction qui fait evoluer l'affichage du score */ 
-function AfficheScore (tabScore){
-
+function AfficheScore (){
+    player.innerHTML=score.player;
+    ia.innerHTML=score.ia;
 }
-/* fonction testant la fin des 3 manches */
-function testNbPts(){
 
+/* fonction testant la fin des 3 manches */
+function testNbPts (){
+}
+
+function affichescore (tabScore){
 }
 /* fonction restart qui initialise la partie */
 function restart(){
-    
-}
-/* fonction qui masque un element */
-function masquerCommand(){
-
-}
-/* fonction qui affiche un element */
-function afficherCommand(){
-    
+    console.log ('nouvelle partie');
+    console.log(`score: player ${Score[0]} IA: ${Score[1]}`);
 }
