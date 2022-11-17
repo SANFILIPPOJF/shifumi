@@ -8,8 +8,12 @@ const command = document.getElementById('command');
 const tryAgain = document.getElementById('restart');
 
 let choixIA;
+let indexGagnant;
 /* Definition du tableau score index 0 = player ; index 1 = IA */
-let Score=[0,0];
+let Score={
+    player: 0,
+    IA: 0
+};
 /* declencheurs des boutons du jeu */
 shi.addEventListener('click', buttonShi);
 fu.addEventListener('click', buttonFu);
@@ -27,17 +31,12 @@ function randomShifumi(){
 
 /* fonction commandée par le bouton Shi */
 function buttonShi(){
+    command.className = "hidden";
     choixIA = randomShifumi();
     player.src = "/img/shi.png";
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Shi Vs IA: ${choixIA}`);
-    if (choixIA == "mi"){
-        console.log("Gagné");
-    }else if (choixIA == "fu"){
-        console.log("Perdu");
-    }else {
-        console.log("Egalité");
-    }
+    quiGagne('shi',choixIA)
 }
 /* fonction commandée par le bouton Fu */
 function buttonFu(){
@@ -45,28 +44,16 @@ function buttonFu(){
     player.src = "/img/fu.png";
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Fu Vs IA: ${choixIA}`);
-    if(choixIA=="fu"){
-        console.log("Egalité");        
-    }else if(choixIA=="mi"){
-        console.log("Gagné");
-    } else {
-        console.log("Perdu");
-    }
-
+    quiGagne('fu',choixIA);
 }
+
 /* fonction commandée par le bouton Mi */
 function buttonMi(){
     choixIA = randomShifumi();
     player.src = "/img/mi.png";
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Mi Vs IA: ${choixIA}`);
-    if (choixIA == "shi"){
-        console.log("Gagné");
-    }else if (choixIA == "fu"){
-        console.log("Perdu");
-    }else {
-        console.log("Egalité");
-    }
+    quiGagne('mi',choixIA)
 }
 /* fonction qui retourne si le joueur ayant fait le choixA gagne, perd, ou a une nouvelle chance  */
 function quiGagne (choixA,choixB){
@@ -78,18 +65,35 @@ function quiGagne (choixA,choixB){
         return 1
     }else{
         console.log('aucun ne gagne')
-        return 'none'}
+        return
+    }
 }
 /* fonction qui affiche le choix determiné pour un joueur determiné */
 function afficheChoix (choix,joueur){
 
 }
 /* fonction qui fait evoluer l'affichage du score */ 
-function evolutionScore (tabScore){
+function AfficheScore (tabScore){
+
+}
+/* fonction testant la fin des 3 manches */
+function testNbPts (){
 
 }
 /* fonction restart qui initialise la partie */
 function restart(){
+<<<<<<< HEAD
     console.log ('nouvelle partie');
     console.log(`score: player ${Score[0]} IA: ${Score[1]}`);
+=======
+    
+}
+/* fonction qui masque un element */
+function masquer(element){
+
+}
+/* fonction qui affiche un element */
+function afficher(element){
+    
+>>>>>>> 198fd47aa1c975d4bba190e216575859051a30c8
 }
