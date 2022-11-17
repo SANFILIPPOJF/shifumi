@@ -90,5 +90,6 @@ function evolutionScore (tabScore){
 }
 /* fonction restart qui initialise la partie */
 function restart(){
-    
+    console.log ('nouvelle partie');
+    console.log(`score: player ${Score[0]} IA: ${Score[1]}`);
 }
