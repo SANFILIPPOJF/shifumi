@@ -36,13 +36,7 @@ function buttonShi(){
     player.src = "/img/shi.png";
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Shi Vs IA: ${choixIA}`);
-    if (choixIA == "mi"){
-        console.log("Gagné");
-    }else if (choixIA == "fu"){
-        console.log("Perdu");
-    }else {
-        console.log("Egalité");
-    }
+    quiGagne('shi',choixIA)
 }
 /* fonction commandée par le bouton Fu */
 function buttonFu(){
@@ -50,33 +44,28 @@ function buttonFu(){
     player.src = "/img/fu.png";
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Fu Vs IA: ${choixIA}`);
-    quiGagne("fu",choixIA);
+    quiGagne('fu',choixIA);
 }
+
 /* fonction commandée par le bouton Mi */
 function buttonMi(){
     choixIA = randomShifumi();
     player.src = "/img/mi.png";
     ia.src = `/img/${choixIA}.png`;
     console.log(`Player: Mi Vs IA: ${choixIA}`);
-    if (choixIA == "shi"){
-        console.log("Gagné");
-    }else if (choixIA == "fu"){
-        console.log("Perdu");
-    }else {
-        console.log("Egalité");
-    }
+    quiGagne('mi',choixIA)
 }
 /* fonction qui retourne si le joueur ayant fait le choixA gagne, perd, ou a une nouvelle chance  */
 function quiGagne (choixA,choixB){
-    if ((choixA=="shi" && choixB=="mi") || (choixA=="fu" && choixB=="shi") || (choixA=="mi" && choixB=="fu")){
-        console.log( 'Player gagne');
-        return;
-    }else if ((choixA=="shi" && choixB=="fu") || (choixA=="fu" && choixB=="mi") || (choixA=="mi" && choixB=="shi")){
-        console.log('IA gagne');
-        return;
+    if ((choixA==shi) && (choixB==mi) || (choixA==fu) && (choixB==shi) || (choixA==mi) && (choixB==fu)){
+        console.log( 'player gagne')
+        return 0
+    }else if ((choixA==shi && choixB==fu) || (choixA==fu) && (choixB==mi) || (choixA==mi) && (choixB==shi)){
+        console.log('IA gagne')
+        return 1
     }else{
-        console.log('Egalité');
-        return;
+        console.log('aucun ne gagne')
+        return
     }
 }
 /* fonction qui affiche le choix determiné pour un joueur determiné */
