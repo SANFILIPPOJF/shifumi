@@ -99,16 +99,45 @@ function testNbPts (){
         return;
     }
 }
-/* fonction qui masque les 3 bouttons */
-function masquerCommand(){
-    command.hidden = true;
+
+
+/* fonction restart qui initialise la partie */
+function restart(){
+    score.player=0;
+    score.ia=0;
+    afficherCommand();
+    masquerTryagainCommand();
+    console.log('nouvelle une partie');
+    console.log(`Player; ${score.player} Vs IA: ${score.ia}`);
+    return;
+    }
+
+/* fonction qui masque un element */
+function masquerCommandCommand(element){
+
 }
-/* fonction qui affiche les 3 boutons */
-function afficherCommand(){
-    command.hidden = false;
+/* fonction qui affiche un element */
+function afficherCommand(element){
+    
 }
-/* fonction qui affiche le bouton "try again" */
-function afficherTryAgain(){
-    tryAgain.className= 'btn-restart';
+
+/* fonction restart qui initialise la partie */
+function restart(){
+    score.player=0;
+    score.ia=0;
+    afficherCommand();
+    masquerTryagain();
+    console.log('nouvelle une partie');
+    console.log(`Player; ${score.player} Vs IA: ${score.ia}`);
+    return;
+    }
+
+/* fonction qui masque un element */
+function masquerCommand(element){
+
+}
+/* fonction qui affiche un element */
+function afficherCommand(element){
+    
 }
 
