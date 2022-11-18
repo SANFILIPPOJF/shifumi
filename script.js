@@ -78,7 +78,7 @@ function quiGagne (choixA,choixB){
 }
 /* fonction qui affiche le choix determiné pour un joueur determiné */
 function afficheChoix (choix,joueur){
-    joueur.src=`./img/${choix}.png`;
+    joueur.src=`.shifumi/img/${choix}.png`;
 }
 
 /* fonction qui fait evoluer l'affichage du score */ 
